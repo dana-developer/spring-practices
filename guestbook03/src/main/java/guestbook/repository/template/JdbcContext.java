@@ -35,7 +35,7 @@ public class JdbcContext {
 		});
 	}
 	
-	private int executeUpdateWithStatementStrategy(StatementStrategy statementStrategy) {		
+	private int executeUpdateWithStatementStrategy(StatementStrategy statementStrategy) throws RuntimeException {		
 		int count = 0;
 		
 		try (
@@ -44,7 +44,7 @@ public class JdbcContext {
 		) {
 			count = pstmt.executeUpdate();
 		} catch (SQLException e) {
-			System.out.println("error:" + e);
+			throw new RuntimeException(e);
 		} 
 		
 		return count;	
@@ -61,7 +61,7 @@ public class JdbcContext {
 		}, rowMapper);
 	}
 
-	private <E> List<E> queryForListWithStatementStrategy(StatementStrategy statementStrategy, RowMapper<E> rowMapper) {		
+	private <E> List<E> queryForListWithStatementStrategy(StatementStrategy statementStrategy, RowMapper<E> rowMapper) throws RuntimeException {		
 		List<E> result = new ArrayList<>();
 		
 		try (
@@ -73,8 +73,9 @@ public class JdbcContext {
 				E e = rowMapper.mapRow(rs, rs.getRow());
 				result.add(e);
 			}
-		} catch (SQLException e) {
-			System.out.println("error:" + e);
+		} 
+		catch (SQLException e) {
+			throw new RuntimeException(e); // try catch를 강제하지 않는다. (application이 처리하도록 위로 던진다)
 		} 
 		
 		return result;	
