@@ -5,7 +5,7 @@
     <artifactId>spring-practices</artifactId>
     <version>0.0.1-SNAPSHOT</version>
   </parent>
-  <artifactId>guestbook03</artifactId>
+  <artifactId>locale</artifactId>
   <packaging>war</packaging>
   
   <properties>
@@ -13,30 +13,34 @@
 		<maven.compiler.source>21</maven.compiler.source>
 		<maven.compiler.target>21</maven.compiler.target>
 		<org.springframework-version>6.2.1</org.springframework-version>
+		 <jcloverslf4j.version>1.7.36</jcloverslf4j.version>		
+    	<logback.version>1.2.11</logback.version>
 	</properties>
-	
-	<dependencies>
-	
-		<!-- spring jdbc -->
+  
+  <!-- Spring MVC -->
+  	<dependencies>
 		<dependency>
 			<groupId>org.springframework</groupId>
-			<artifactId>spring-jdbc</artifactId>
+			<artifactId>spring-webmvc</artifactId>
 			<version>${org.springframework-version}</version>
 		</dependency>
 		
-		<!-- common dbcp -->
+		<!-- servlet api -->
 		<dependency>
-			<groupId>commons-dbcp</groupId>
-			<artifactId>commons-dbcp</artifactId>
-			<version>1.4</version>
+		    <groupId>jakarta.servlet</groupId>
+		    <artifactId>jakarta.servlet-api</artifactId>
+		    <version>6.0.0</version>
+		    <scope>provided</scope>
 		</dependency>
-	
-		<!-- mariadb jdbc -->
+		
+		<!-- jsp api -->		
 		<dependency>
-		    <groupId>org.mariadb.jdbc</groupId>
-		    <artifactId>mariadb-java-client</artifactId>
-		    <version>3.4.0</version>
+		    <groupId>jakarta.servlet.jsp</groupId>
+		    <artifactId>jakarta.servlet.jsp-api</artifactId>
+		    <version>4.0.0</version>
+		    <scope>provided</scope>
 		</dependency>
+		
 		
 		<!-- jstl -->
 		<dependency>
@@ -56,31 +60,9 @@
 		    <artifactId>jakarta.servlet.jsp.jstl-api</artifactId>
 		    <version>3.0.2</version>
 		</dependency>
-		
-		<!-- spring mvc -->
-		<dependency>
-			<groupId>org.springframework</groupId>
-			<artifactId>spring-webmvc</artifactId>
-			<version>${org.springframework-version}</version>
-		</dependency>
-
-		<dependency>
-		    <groupId>jakarta.servlet</groupId>
-		    <artifactId>jakarta.servlet-api</artifactId>
-		    <version>6.0.0</version>
-		    <scope>provided</scope>
-		</dependency>
-		
-		<!-- jsp api -->		
-		<dependency>
-		    <groupId>jakarta.servlet.jsp</groupId>
-		    <artifactId>jakarta.servlet.jsp-api</artifactId>
-		    <version>4.0.0</version>
-		    <scope>provided</scope>
-		</dependency>
 	</dependencies>
 		
 	<build>
-		<finalName>guestbook03</finalName>
+		<finalName>logex</finalName>
 	</build>
 </project>
