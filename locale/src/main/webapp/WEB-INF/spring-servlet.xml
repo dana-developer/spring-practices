@@ -13,6 +13,9 @@
 
 	<mvc:annotation-driven></mvc:annotation-driven>
 	
+	<!-- DefaultServlet Handler -->
+	<mvc:default-servlet-handler></mvc:default-servlet-handler>
+	
 	<!-- Locale Resolver -->
 	<bean id="localeResolver" class="org.springframework.web.servlet.i18n.CookieLocaleResolver">
 	    <constructor-arg index="0" value="lang" />	    
