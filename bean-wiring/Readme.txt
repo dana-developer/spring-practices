@@ -31,11 +31,6 @@
     config.videosystem
        |--- DVDPlayerConfig.java
 
-    config.videosystem.mixing
-       |--- DVDConfig.java
-       |--- DVDPlayerConfig.java
-       |--- VideoSystemConfig.java
-
 [src/main/resources]
     config.videosystem
        |--- applicationContext.xml
@@ -45,6 +40,16 @@
        |--- DVDPlayerJavaConfigTest.java
        |--- DVDPlayerXmlConfigTest.java
 
+=========================================
+
+[src/main/java]
+    config.videosystem.mixing
+       |--- DVDConfig.java
+       |--- DVDPlayerConfig.java
+       |--- VideoSystemConfig.java
+
+
+[src/test/java]
     config.videosystem.mixing
        |--- DVDPlayerMixingConfigTest01.java
        |--- DVDPlayerMixingConfigTest02.java
