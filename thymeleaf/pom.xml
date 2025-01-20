@@ -47,6 +47,11 @@
             <artifactId>thymeleaf-spring6</artifactId>
             <version>${thymeleaf.version}</version>
         </dependency>
+        <dependency>
+		    <groupId>org.thymeleaf.extras</groupId>
+		    <artifactId>thymeleaf-extras-springsecurity6</artifactId>
+		    <version>${thymeleaf.version}</version>
+		</dependency>
 
         <!-- jackson -->
         <dependency>
@@ -89,7 +94,7 @@
             <artifactId>jakarta.servlet.jsp-api</artifactId>
             <version>${jakarta-jsp-api.version}</version>
             <scope>provided</scope>
-        </dependency>
+        </dependency>		
                         
     </dependencies>
 
